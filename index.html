@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACS Academy | Alpha Crypto Signal</title>
+<style>
+:root{
+ --bg:#070b14;--bg2:#0b1220;--card:#101827;--text:#f5f7fb;--muted:#9aa6bb;
+ --line:rgba(255,255,255,.09);--purple:#785cff;--blue:#28bdf4;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(120,92,255,.18),transparent 30%),radial-gradient(circle at 90% 15%,rgba(40,189,244,.10),transparent 28%),var(--bg);color:var(--text);font-family:Arial,"Noto Sans Bengali",sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 22px}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:23px}.logo span{color:var(--blue)}.logo small{display:block;color:var(--muted);font-size:10px;font-weight:500;margin-top:2px}
+.links{display:flex;gap:24px;color:var(--muted);font-size:14px}.links a:hover{color:#fff}
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center;padding:45px 0 82px}
+.badge{display:inline-flex;padding:8px 14px;border-radius:99px;border:1px solid rgba(120,92,255,.4);background:rgba(120,92,255,.1);color:#d2ccff;font-size:13px}
+h1{font-size:clamp(42px,5.5vw,74px);line-height:1.1;margin:18px 0}
+.grad{background:linear-gradient(90deg,#fff,#aa9dff,#47d4ff);-webkit-background-clip:text;color:transparent}
+.hero p{font-size:18px;line-height:1.75;color:var(--muted);margin:0;max-width:590px}
+.features{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.feature{padding:10px 13px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:13px}
+.btn{display:inline-block;padding:15px 24px;border-radius:13px;font-weight:800;background:linear-gradient(90deg,var(--purple),var(--blue));box-shadow:0 12px 35px rgba(40,189,244,.14)}
+.market-card{border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,#111a2c,#0b111e);overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.market-top{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.market-name{display:flex;gap:10px;align-items:center;font-weight:800}.btc{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#f7931a;color:#fff;font-weight:900}
+.live{font-size:11px;color:#7ee7b7;padding:6px 10px;border-radius:99px;background:rgba(72,215,139,.08);border:1px solid rgba(72,215,139,.18)}
+.tv{height:380px;background:#0b111e}
+section{padding:78px 0}.kicker{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:1px}
+h2{font-size:clamp(31px,4vw,48px);margin:10px 0 13px}.head{max-width:760px;margin-bottom:34px}.head p{color:var(--muted);line-height:1.7;margin:0}
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.subject{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025);min-height:120px}.subject .ico{font-size:25px}.subject h3{margin:12px 0 0;font-size:17px}
+.steps{display:grid;gap:24px}.step{display:grid;grid-template-columns:74px 1fr 1.05fr;gap:25px;align-items:center;padding:22px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.025)}
+.stepnum{font-size:26px;font-weight:900;color:#a89cff}.step h3{font-size:21px;margin:0 0 9px}.step p{color:var(--muted);line-height:1.7;margin:0}
+.shot{height:215px;border-radius:17px;border:1px dashed rgba(255,255,255,.22);background:linear-gradient(135deg,#172136,#0c121f);display:grid;place-items:center;text-align:center;color:var(--muted);padding:20px}
+.shot span{font-size:38px;display:block;margin-bottom:8px}
+.feedback{overflow:hidden;border:1px solid var(--line);border-radius:26px;padding:17px;background:rgba(255,255,255,.018)}
+.row{display:flex;gap:16px;width:max-content;margin-bottom:16px}.row:last-child{margin:0}.fcard{width:245px;height:300px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#172136,#0c121e);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+.left{animation:left 30s linear infinite}.right{animation:right 30s linear infinite}.feedback:hover .row{animation-play-state:paused}
+@keyframes left{to{transform:translateX(-50%)}}@keyframes right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px}
+.social{min-height:120px;padding:22px;border-radius:20px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;gap:12px;font-weight:750;font-size:18px;transition:.2s}
+.social:hover{transform:translateY(-5px);border-color:rgba(120,92,255,.7)}
+.social svg{width:32px;height:32px;fill:currentColor}.facebook{color:#1877f2}.tiktok{color:#fff}.telegram{color:#29a9ea}
+@media(max-width:520px){.socials{grid-template-columns:repeat(2,1fr);gap:14px}.social{min-height:110px;padding:16px;font-size:16px;flex-direction:column;gap:8px}}
+footer{border-top:1px solid var(--line);padding:36px 0;text-align:center;color:var(--muted)}footer strong{display:block;color:#fff;font-size:20px;margin-bottom:5px}
+@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:20px}.tv{height:330px}.subjects{grid-template-columns:1fr 1fr}.step{grid-template-columns:1fr}.stepnum{font-size:20px}}
+@media(max-width:520px){.subjects{grid-template-columns:1fr}.tv{height:300px}.hero{padding-bottom:55px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+ <div class="logo">ACS <span>Academy</span><small>by Alpha Crypto Signal</small></div>
+ <div class="links"><a href="#learning">Learning</a><a href="#steps">How to Join</a><a href="#feedback">Feedback</a></div>
+</nav>
+
+<section class="hero" id="learning">
+ <div>
+  <div class="badge">🎓 Free Trading Learning Platform</div>
+  <h1>সম্পূর্ণ ফ্রিতে<br><span class="grad">Trading শিখুন</span></h1>
+  <p>Beginner থেকে ধাপে ধাপে Trading সম্পর্কে শিখুন এবং নিজের Knowledge বৃদ্ধি করুন</p>
+  <div class="features">
+   <div class="feature">🎓 100% Free Learning</div>
+   <div class="feature">📚 Beginner Friendly</div>
+   <div class="feature">📊 Step by Step Guide</div>
+  </div>
+  <a class="btn" href="#steps">Start Learning →</a>
+ </div>
+
+ <div class="market-card">
+  <div class="market-top">
+   <div class="market-name"><div class="btc">₿</div>Bitcoin Live Price Action</div>
+   <div class="live">● LIVE</div>
+  </div>
+  <div class="tv">
+   <!-- Replace this widget later with a YouTube video, image, or any other embedded content -->
+   <div class="tradingview-widget-container" style="height:100%;width:100%">
+    <div id="tradingview_btc" style="height:100%;width:100%"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+      new TradingView.widget({
+        "autosize": true,
+        "symbol": "BINANCE:BTCUSDT",
+        "interval": "60",
+        "timezone": "Asia/Dhaka",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "enable_publishing": false,
+        "hide_side_toolbar": true,
+        "allow_symbol_change": false,
+        "container_id": "tradingview_btc"
+      });
+    </script>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="head"><div class="kicker">LEARNING TOPICS</div><h2>Trading শিখতে যা যা পাবেন</h2><p>বিভিন্ন গুরুত্বপূর্ণ বিষয় ধাপে ধাপে শেখার জন্য সাজানো থাকবে</p></div>
+ <div class="subjects">
+  <div class="subject"><div class="ico">📈</div><h3>Trading Basics</h3></div>
+  <div class="subject"><div class="ico">📊</div><h3>Market Analysis</h3></div>
+  <div class="subject"><div class="ico">🕯️</div><h3>Candlestick Analysis</h3></div>
+  <div class="subject"><div class="ico">📉</div><h3>Technical Analysis</h3></div>
+  <div class="subject"><div class="ico">⚖️</div><h3>Risk Management</h3></div>
+  <div class="subject"><div class="ico">🧠</div><h3>Trading Psychology</h3></div>
+ </div>
+</section>
+
+<section id="steps">
+ <div class="head"><div class="kicker">STEP BY STEP</div><h2>ফ্রি ক্লাস কিভাবে পাবেন?</h2><p>প্রতিটি ধাপে Screenshot এবং বিস্তারিত নির্দেশনা থাকবে</p></div>
+ <div class="steps">
+  <article class="step"><div class="stepnum">01</div><div><h3>কিভাবে Join করবেন</h3><p>প্রথমে প্রয়োজনীয় Community বা Platform-এ যুক্ত হওয়ার নিয়ম এখানে দেওয়া থাকবে</p></div><div class="shot"><div><span>🖼️</span>আপনার Step 01 Screenshot এখানে</div></div></article>
+  <article class="step"><div class="stepnum">02</div><div><h3>কিভাবে Learning Post খুঁজে পাবেন</h3><p>Join করার পরে নির্দিষ্ট Free Learning Post কোথায় এবং কিভাবে খুঁজে পাবেন তা দেখানো হবে</p></div><div class="shot"><div><span>🖼️</span>আপনার Step 02 Screenshot এখানে</div></div></article>
+  <article class="step"><div class="stepnum">03</div><div><h3>কিভাবে Learning শুরু করবেন</h3><p>Post পাওয়ার পরে নির্দেশনা অনুসরণ করে কিভাবে শেখা শুরু করবেন তা এখানে থাকবে</p></div><div class="shot"><div><span>🖼️</span>আপনার Step 03 Screenshot এখানে</div></div></article>
+  <article class="step"><div class="stepnum">04</div><div><h3>মূল Learning Content দেখুন</h3><p>যাদের আগে থেকেই প্রয়োজনীয় ধারণা আছে তারা সরাসরি Main Learning Content দেখতে পারবেন</p></div><div class="shot"><div><span>🖼️</span>আপনার Step 04 Screenshot এখানে</div></div></article>
+ </div>
+</section>
+
+<section id="feedback">
+ <div class="head"><div class="kicker">COMMUNITY FEEDBACK</div><h2>Community Feedback & Results</h2><p>Feedback এবং Experience Screenshot দুই দিক থেকে চলতে থাকবে</p></div>
+ <div class="feedback">
+  <div class="row left">
+   <div class="fcard">Feedback Screenshot</div><div class="fcard">Member Experience</div><div class="fcard">Shared Result</div><div class="fcard">Feedback Screenshot</div>
+   <div class="fcard">Feedback Screenshot</div><div class="fcard">Member Experience</div><div class="fcard">Shared Result</div><div class="fcard">Feedback Screenshot</div>
+  </div>
+  <div class="row right">
+   <div class="fcard">Community Feedback</div><div class="fcard">Member Screenshot</div><div class="fcard">Shared Experience</div><div class="fcard">Feedback Screenshot</div>
+   <div class="fcard">Community Feedback</div><div class="fcard">Member Screenshot</div><div class="fcard">Shared Experience</div><div class="fcard">Feedback Screenshot</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="head">
+  <div class="kicker">OFFICIAL PLATFORMS</div>
+  <h2>Follow Alpha Crypto Signal</h2>
+  <p>আমাদের অফিসিয়াল Social Media এবং Community Platform-এ যুক্ত থাকুন</p>
+ </div>
+ <div class="socials">
+  <a class="social facebook" href="#" aria-label="Facebook">
+   <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.5 0-1.97.94-1.97 1.9v2.28h3.35l-.54 3.49h-2.81V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
+   <span>Facebook</span>
+  </a>
+  <a class="social tiktok" href="#" aria-label="TikTok">
+   <svg viewBox="0 0 24 24"><path d="M19.59 6.69a6.94 6.94 0 0 1-4.76-1.89A6.98 6.98 0 0 1 13.05 0h-3.72v15.48a2.86 2.86 0 1 1-2.01-2.73V8.98A6.59 6.59 0 1 0 13.05 15.5V8.66a10.65 10.65 0 0 0 6.54 2.24V7.18z"/></svg>
+   <span>TikTok</span>
+  </a>
+  <a class="social telegram" href="#" aria-label="Telegram">
+   <svg viewBox="0 0 24 24"><path d="M9.04 15.47 8.8 19.1c.35 0 .5-.15.68-.33l1.63-1.56 3.38 2.48c.62.34 1.06.16 1.23-.57l2.23-10.46h.01c.2-.93-.34-1.3-.94-1.08L3.89 12.67c-.91.35-.9.86-.16 1.09l3.41 1.06L15.06 9.8c.37-.24.71-.11.43.13z"/></svg>
+   <span>Telegram</span>
+  </a>
+ </div>
+</section>
+</div>
+
+<footer><div class="wrap"><strong>ACS Academy</strong><div>by Alpha Crypto Signal</div><p>© 2026 Alpha Crypto Signal</p></div></footer>
+</body>
+</html>
