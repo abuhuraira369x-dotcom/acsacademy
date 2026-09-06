@@ -1,6 +1,10 @@
 ---
 title: ACS Academy
-description: Welcome to ACS Academy
+description: Learn and grow with ACS Academy
 ---
 
-Website content can be managed from the admin panel after Netlify Identity and Git Gateway are enabled.
+# Welcome to ACS Academy
+
+এই ওয়েবসাইটের কনটেন্ট Admin Panel থেকে পরিবর্তন করা যাবে
+
+আপনার শেখার যাত্রা শুরু করুন

@@ -1,20 +1,22 @@
-ACS Academy Admin Files
+ACS Academy - Correct Upload Structure
 
-Upload the folders exactly as they are:
+Upload the CONTENTS of this folder to the ROOT of your GitHub repository.
 
-admin/index.html
-admin/config.yml
-content/homepage.md
+Correct structure:
 
-Then commit and wait for Netlify to deploy.
+admin/
+  index.html
+  config.yml
 
-Important:
-For /admin/ login to work, enable Netlify Identity and Git Gateway.
+content/
+  homepage.md
 
-Netlify:
-Site configuration -> Identity -> Enable Identity
-Identity -> Registration preferences -> Invite only
-Identity -> Services -> Enable Git Gateway
+index.html
 
-Then open:
-https://acsacademyh.netlify.app/admin/
+README.txt
+
+After deploying on Netlify:
+1. Enable Identity
+2. Enable Git Gateway
+3. Invite yourself as a user
+4. Open yoursite.netlify.app/admin/
